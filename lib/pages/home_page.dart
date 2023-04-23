@@ -249,6 +249,11 @@ class _HomePageState extends State<HomePage> with DrawStarMixin {
                         color: colors[randomValue],
                       ),
                       onPressed: () {
+                        _controllerCenter.stop();
+                        setState(() {
+                          _isClicked = false;
+                          _text = '';
+                        });
                         AwesomeDialog(
                           context: context,
                           dialogType: DialogType.noHeader,
